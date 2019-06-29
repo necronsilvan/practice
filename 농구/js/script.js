@@ -1,6 +1,7 @@
 var comScore = 0;
 var userScore = 0;
 var isComputerTurn = true;
+var shotsLeft = 15;
 
 function onComputerShoot() {
     if(!isComputerTurn)
@@ -28,6 +29,18 @@ function onComputerShoot() {
         }
     }
     isComputerTurn = false;
+
+    var computerButtons = document.getElementsByClassName('btn-computer');
+
+    for(var i = 0; i < computerButtons.length; i++) {
+        computerButtons[i].disabled = true;
+    }
+
+    var userButtons = document.getElementsByClassName('btn-user');
+
+    for(var i = 0; i < userButtons.length; i++) {
+        userButtons[i].disabled = false;
+    }
 }
 
 function onUserShoot(shootType){
@@ -55,4 +68,41 @@ function onUserShoot(shootType){
         }
     }
     isComputerTurn = true;
+
+    var computerButtons = document.getElementsByClassName('btn-computer');
+
+    for(var i = 0; i < computerButtons.length; i++) {
+        computerButtons[i].disabled = false;
+    }
+
+    var userButtons = document.getElementsByClassName('btn-user');
+
+    for(var i = 0; i < userButtons.length; i++) {
+        userButtons[i].disabled = true;
+    }
+
+    shotsLeft--;
+
+    var shotsLeftElem = document.getElementById('shots-left');
+    shotsLeftElem.innerHTML = shotsLeft;
+
+    if (shotsLeft === 0){
+        if(userScore > comScore) {
+            textElem.innerHTML = "승리";
+        }
+        else if(userScore < comScore) {
+            textElem.innerHTML = "패배";
+        }
+        else {
+            textElem.innerHTML = "무승부";
+        }
+
+        for(var i = 0; i < computerButtons.length; i++) {
+            computerButtons[i].disabled = true;
+        }
+        for(var i = 0; i < userButtons.length; i++) {
+            userButtons[i].disabled = true;
+        }
+
+    }
 }
