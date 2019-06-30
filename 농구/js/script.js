@@ -52,8 +52,9 @@ function onUserShoot(shootType){
 
     game.shotsLeft--;
 
-    var shotsLeftElem = document.getElementById('shots-left');
-    shotsLeftElem.innerHTML = game.shotsLeft;
+    //var shotsLeftElem = document.getElementById('shots-left');
+    var $shotsLeftElem = $('#shots-left');
+    $shotsLeftElem.html(game.shotsLeft);
 
     if (game.shotsLeft === 0){
         if(user.score > computer.score) {
@@ -73,36 +74,46 @@ function onUserShoot(shootType){
 }
 
 function showtext(a){
-    var textElem = document.getElementById("text");
-    textElem.innerHTML = a;
+    //var textElem = document.getElementById("text");
+    var $textElem = $('#text');
+    $('#text').fadeOut(350, function(){
+    $('#text').html(a);
+    $('#text').fadeIn(100);
+    });
 }
 
 function updateComputerScore(score){
     computer.score += score;
-    var comScoreElem = document.getElementById('computer-score');
-    comScoreElem.innerHTML = computer.score;
+    //var comScoreElem = document.getElementById('computer-score');
+    var $comScoreElem = $('#computer-score');
+
+    $comScoreElem.animateNumber({
+    number:computer.score
+    });
 }
 
 function updateUserScore(score){
     user.score += score;
-    var userScoreElem = document.getElementById('user-score');
-    userScoreElem.innerHTML = user.score;
+    //var userScoreElem = document.getElementById('user-score');
+    var $userScoreElem = $('#user-score');
+
+    $userScoreElem.animateNumber({
+    number:user.score
+    });
 }
 
 function disableComputerButtons(flag){
+/*
     var computerButtons = document.getElementsByClassName('btn-computer');
-
     for(var i = 0; i < computerButtons.length; i++) {
         computerButtons[i].disabled = flag;
     }
+    */
+    $('.btn-computer').prop('disabled', flag);
 }
 
 function disableUserButtons(flag){
-    var userButtons = document.getElementsByClassName('btn-user');
-
-    for(var i = 0; i < userButtons.length; i++) {
-        userButtons[i].disabled = flag;
-    }
+    $('.btn-user').prop('disabled', flag);
 }
 
 function updateAI(){
@@ -126,3 +137,20 @@ function updateAI(){
     }
 
 }
+$(function(){
+    showtext(3);
+
+    setTimeout(function(){
+    showtext(2);
+
+        setTimeout(function(){
+            showtext(1);
+
+            setTimeout(function(){
+                showtext('컴퓨터부터 시작');
+                disableComputerButtons(false);
+            }, 1000);
+        }, 1000);
+    }, 1000);
+});
+
