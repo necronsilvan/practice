@@ -38,7 +38,7 @@ function draw() {
         fill(255, 180);
         text('Press Restart', width/2, 100+height/2);
         function touchStarted() {
-            document.location.reload();
+            window.location.reload(true);
         }
         }
     else {
