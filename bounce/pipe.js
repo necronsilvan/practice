@@ -5,7 +5,7 @@ function pipe() {
     this.bottom = height - (this.top + this.spacing);
     this.x = width;
     this.w = 25;
-    this.speed = 4;
+    this.speed = 5;
     this.highlight = false;
 
     this.hits = function(ovjBird) {
