@@ -36,7 +36,10 @@ function draw() {
         text('Your LiveScore is '+LiveScore+'!', width/2, 50+height/2);
         textSize(14);
         fill(255, 180);
-        text('Press F5 Restart', width/2, 100+height/2);
+        text('Press Restart', width/2, 100+height/2);
+        function touchStarted() {
+            document.location.reload();
+        }
         }
     else {
           // display background image
