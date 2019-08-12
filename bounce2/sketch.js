@@ -4,6 +4,8 @@ var play = 0;
 var score = 0;
 var LiveScore = 0;
 var bird, over, sky;
+var differ = 1;
+var hitSound;
 
 function preload()
 {
@@ -15,6 +17,8 @@ function preload()
 
 function setup() {
     createCanvas(400,600);
+    soundFormats('mp3');
+    hitSound = loadSound('hit.mp3');
     ovjBird = new ovjBird();
     pipes.push(new pipe());
 }
@@ -43,36 +47,31 @@ function draw() {
     else if (play === 1) {
         imageMode(CORNER);
         image(sky, 0, 0);
-
         strokeWeight(1);
         stroke(100);
-        for (var i = pipes.length-1; i >= 0; i--) {
-        pipes[i].show();
-        pipes[i].update();
 
-        if (pipes[i].hits(ovjBird)) {
-            console.log("HIT");
-            score -= 3;
-
-            if(score < 0) {
-                play = 2;
-            }
+        if (differ === 1) {
+            pipeScore(1);
+            pipeNum(100);
         }
 
-        if (pipes[i].offscreen()) {
-            pipes.splice(i, 1);
-            }
+        else if (differ === 2) {
+            pipeScore(3);
+            pipeNum(80);
         }
-            ovjBird.update();
-            ovjBird.show();
 
-        if (frameCount % 70 == 0) {
-            pipes.push(new pipe());
+        else {
+            pipeScore(5);
+            pipeNum(60);
         }
-            if (frameCount % 100 == 0) {
-                score+= 1;
-                LiveScore+=1;
-            }
+
+        ovjBird.update();
+        ovjBird.show();
+
+        if (frameCount % 100 == 0) {
+            score+= 1;
+            LiveScore+=1;
+        }
         textSize(24);
         fill(255);
         strokeWeight(4);
@@ -115,19 +114,47 @@ function touchStarted() {
     }
     else {
         if(mouseX > 100 && mouseX < 300 && mouseY > 200 && mouseY < 260) {
+            differ = 1;
             play = 1;
         }
 
         if(mouseX > 100 && mouseX < 300 && mouseY > 300 && mouseY < 360) {
+            differ = 2;
             play = 1;
         }
 
         if(mouseX > 100 && mouseX < 300 && mouseY > 400 && mouseY < 460) {
+            differ = 3;
             play = 1;
         }
     }
 }
 
+function pipeScore(minus) {
+    for (var i = pipes.length-1; i >= 0; i--) {
+    pipes[i].show();
+    pipes[i].update();
+
+        if (pipes[i].hits(ovjBird)) {
+        hitSound.play();
+        score -= minus;
+
+        if(score < 0) {
+        play = 2;
+        }
+    }
+
+    if (pipes[i].offscreen()) {
+    pipes.splice(i, 1);
+        }
+    }
+}
+
+function pipeNum(frame) {
+    if (frameCount % frame == 0) {
+        pipes.push(new pipe());
+    }
+}
 //function keyPressed() {
 //    if (key == ' ') {
 //        ovjBird.up();
