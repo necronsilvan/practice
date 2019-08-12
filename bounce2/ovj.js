@@ -4,7 +4,7 @@ function ovjBird() {
     this.x = 64;
 
     this.gravity = 0.3;
-    this.lift = -7.5;
+    this.lift = -7;
     this.velocity = 0;
 
     this.show = function() {
