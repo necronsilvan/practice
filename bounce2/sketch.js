@@ -50,12 +50,12 @@ function draw() {
 
         if (differ === 1) {
             pipeScore(1);
-            pipeNum(100);
+            pipeNum(120);
         }
 
         else if (differ === 2) {
             pipeScore(3);
-            pipeNum(80);
+            pipeNum(90);
         }
 
         else {
