@@ -13,12 +13,12 @@ function preload()
   sky = loadImage("sky.png");
   bird = loadImage("bird.png");
   over = loadImage("over.png");
+  soundFormats('mp3');
+  hitSound = loadSound('hit.mp3');
 }
 
 function setup() {
     createCanvas(400,600);
-    soundFormats('mp3');
-    hitSound = loadSound('hit.mp3');
     ovjBird = new ovjBird();
     pipes.push(new pipe());
 }
