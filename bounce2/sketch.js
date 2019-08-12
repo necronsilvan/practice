@@ -12,7 +12,6 @@ function preload()
   sky = loadImage("sky.png");
   bird = loadImage("bird.png");
   over = loadImage("over.png");
-  hitSound = loadSound('hit.mp3');
 }
 
 function setup() {
