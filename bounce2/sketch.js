@@ -5,7 +5,6 @@ var score = 0;
 var LiveScore = 0;
 var bird, over, sky;
 var differ = 1;
-var hitSound;
 
 function preload()
 {
