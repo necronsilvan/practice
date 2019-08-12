@@ -1,6 +1,6 @@
 var ovjBird;
 var pipes = [];
-var play = true;
+var play = 0;
 var score = 0;
 var LiveScore = 0;
 var bird, over, sky;
@@ -20,9 +20,8 @@ function setup() {
 }
 
 function draw() {
-    background(0);
-    if (!play) {
-
+    background(20);
+    if (play === 2) {
         textSize(40);
         fill(255, 0, 0);
         textAlign(CENTER, CENTER);
@@ -38,15 +37,15 @@ function draw() {
         fill(255, 180);
         text('Press Restart', width/2, 100+height/2);
         function touchStarted() {
-            window.location.reload(true);
+            play = 0;
         }
-        }
-    else {
-          // display background image
+    }
+    else if (play === 1) {
+        imageMode(CORNER);
         image(sky, 0, 0);
+
         strokeWeight(1);
         stroke(100);
-
         for (var i = pipes.length-1; i >= 0; i--) {
         pipes[i].show();
         pipes[i].update();
@@ -56,7 +55,7 @@ function draw() {
             score -= 3;
 
             if(score < 0) {
-                play = false;
+                play = 2;
             }
         }
 
@@ -78,11 +77,55 @@ function draw() {
         fill(255);
         strokeWeight(4);
         stroke(50, 100, 255);
-        text('HP : '+score, 20, 30);
+        textAlign(CENTER, CENTER);
+        text('HP : '+score, 45, 25);
+    }
+    else {
+    play = 0;
+    score = 0;
+    LiveScore = 0;
+    pipes = [];
+    ovjBird.x= 64;
+    ovjBird.y= height/2;
+    textAlign(CENTER, CENTER);
+    textSize(40);
+    fill(255);
+    text('날아봅시다', width/2, 100);
+    textSize(24);
+    fill('#fae');
+    rect(width/4, 200, 200, 60, 10);
+    fill(255, 204, 0);
+    rect(width/4, 300, 200, 60, 10);
+    fill('red');
+    rect(width/4, 400, 200, 60, 10);
+    fill(0);
+    text('초보 난이도', width/2, 235);
+    text('일반 난이도', width/2, 335);
+    text('헬븐 난이도', width/2, 435);
+
     }
 }
+
 function touchStarted() {
-    ovjBird.up();
+    if(play === 2) {
+        play = 0;
+    }
+    else if (play === 1) {
+        ovjBird.up();
+    }
+    else {
+        if(mouseX > 100 && mouseX < 300 && mouseY > 200 && mouseY < 260) {
+            play = 1;
+        }
+
+        if(mouseX > 100 && mouseX < 300 && mouseY > 300 && mouseY < 360) {
+            play = 1;
+        }
+
+        if(mouseX > 100 && mouseX < 300 && mouseY > 400 && mouseY < 460) {
+            play = 1;
+        }
+    }
 }
 
 //function keyPressed() {
