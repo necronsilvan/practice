@@ -5,6 +5,7 @@ var score = 0;
 var LiveScore = 0;
 var bird, over, sky;
 var differ = 1;
+var hitSound = new Audio('hit.mp3');
 
 function preload()
 {
@@ -133,6 +134,7 @@ function pipeScore(minus) {
     pipes[i].update();
 
         if (pipes[i].hits(ovjBird)) {
+        hitSound.play();
         score -= minus;
 
         if(score < 0) {
