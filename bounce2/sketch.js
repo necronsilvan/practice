@@ -6,6 +6,7 @@ var LiveScore = 0;
 var bird, over, sky;
 var differ = 1;
 var hitSound = new Audio('hit.mp3');
+var swish = new Audio('swish.mp3');
 
 function preload()
 {
@@ -16,7 +17,7 @@ function preload()
 }
 
 function setup() {
-    createCanvas(400,600);
+    createCanvas(380,560);
     ovjBird = new ovjBird();
     pipes.push(new pipe());
 }
@@ -108,6 +109,7 @@ function touchStarted() {
         play = 0;
     }
     else if (play === 1) {
+        swish.play();
         ovjBird.up();
     }
     else {
