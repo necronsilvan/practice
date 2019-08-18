@@ -1,4 +1,4 @@
-import { detectCollision } from "./detection";
+import { detectCollision } from "./detection.js";
 let hitPaddle = new Audio("/assets/btn.mp3");
 export default class Ball {
   constructor(game) {
