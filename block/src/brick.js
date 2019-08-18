@@ -1,4 +1,4 @@
-import { detectCollision } from "./detection";
+import { detectCollision } from "./detection.js";
 let hitBrick = new Audio("/assets/Pop.mp3");
 export default class Brick {
   constructor(game, position) {
