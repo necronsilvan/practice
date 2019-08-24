@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link href="styles/style.css" rel="stylesheet">
+    <script src="script.js" async></script>
+    <title>Mix Or Match</title>
+  </head>
+  <body>
+    <h1 class="page-title">Mix-Or-Match</h1>
+    <div class="overlay-text visible">
+      Click to Start
+    </div>
+    <div id="game-over-text" class="overlay-text">
+      GAME OVER
+      <span class="overlay-text-small">Click to Restart</span>
+    </div>
+    <div id="victory-text" class="overlay-text">
+      GAME CLEAR
+      <span class="overlay-text-small">Click to Restart</span>
+    </div>
+    <div class="game-container">
+      <div class="game-info-container">
+        <div class="game-info">
+          Time <span id="time-remaining">100</span>
+        </div>
+        <div class="game-info">
+          Flips <span id="Flips">0</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-back card-face">
+          <img class="Flower Flower-top-left" src="Flower.png">
+          <img class="Flower Flower-top-right" src="Flower.png">
+          <img class="Flower Flower-bottom-left" src="Flower.png">
+          <img class="Flower Flower-bottom-right" src="Flower.png">
+          <img class="heart" src="heart.png">
+        </div>
+        <div class="card-front card-face">
+          <img class="Flower Flower-top-left" src="FlowerGrey.png">
+          <img class="Flower Flower-top-right" src="FlowerGrey.png">
+          <img class="Flower Flower-bottom-left" src="FlowerGrey.png">
+          <img class="Flower Flower-bottom-right" src="FlowerGrey.png">
+          <img class="card-value" src="aunt.png">
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-back card-face">
+          <img class="Flower Flower-top-left" src="Flower.png">
+          <img class="Flower Flower-top-right" src="Flower.png">
+          <img class="Flower Flower-bottom-left" src="Flower.png">
+          <img class="Flower Flower-bottom-right" src="Flower.png">
+          <img class="heart" src="heart.png">
+        </div>
+        <div class="card-front card-face">
+          <img class="Flower Flower-top-left" src="FlowerGrey.png">
+          <img class="Flower Flower-top-right" src="FlowerGrey.png">
+          <img class="Flower Flower-bottom-left" src="FlowerGrey.png">
+          <img class="Flower Flower-bottom-right" src="FlowerGrey.png">
+          <img class="card-value" src="aunt.png">
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-back card-face">
+          <img class="Flower Flower-top-left" src="Flower.png">
+          <img class="Flower Flower-top-right" src="Flower.png">
+          <img class="Flower Flower-bottom-left" src="Flower.png">
+          <img class="Flower Flower-bottom-right" src="Flower.png">
+          <img class="heart" src="heart.png">
+        </div>
+        <div class="card-front card-face">
+          <img class="Flower Flower-top-left" src="FlowerGrey.png">
+          <img class="Flower Flower-top-right" src="FlowerGrey.png">
+          <img class="Flower Flower-bottom-left" src="FlowerGrey.png">
+          <img class="Flower Flower-bottom-right" src="FlowerGrey.png">
+          <img class="card-value" src="horim.png">
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-back card-face">
+          <img class="Flower Flower-top-left" src="Flower.png">
+          <img class="Flower Flower-top-right" src="Flower.png">
+          <img class="Flower Flower-bottom-left" src="Flower.png">
+          <img class="Flower Flower-bottom-right" src="Flower.png">
+          <img class="heart" src="heart.png">
+        </div>
+        <div class="card-front card-face">
+          <img class="Flower Flower-top-left" src="FlowerGrey.png">
+          <img class="Flower Flower-top-right" src="FlowerGrey.png">
+          <img class="Flower Flower-bottom-left" src="FlowerGrey.png">
+          <img class="Flower Flower-bottom-right" src="FlowerGrey.png">
+          <img class="card-value" src="horim.png">
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-back card-face">
+          <img class="Flower Flower-top-left" src="Flower.png">
+          <img class="Flower Flower-top-right" src="Flower.png">
+          <img class="Flower Flower-bottom-left" src="Flower.png">
+          <img class="Flower Flower-bottom-right" src="Flower.png">
+          <img class="heart" src="heart.png">
+        </div>
+        <div class="card-front card-face">
+          <img class="Flower Flower-top-left" src="FlowerGrey.png">
+          <img class="Flower Flower-top-right" src="FlowerGrey.png">
+          <img class="Flower Flower-bottom-left" src="FlowerGrey.png">
+          <img class="Flower Flower-bottom-right" src="FlowerGrey.png">
+          <img class="card-value" src="horim2.png">
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-back card-face">
+          <img class="Flower Flower-top-left" src="Flower.png">
+          <img class="Flower Flower-top-right" src="Flower.png">
+          <img class="Flower Flower-bottom-left" src="Flower.png">
+          <img class="Flower Flower-bottom-right" src="Flower.png">
+          <img class="heart" src="heart.png">
+        </div>
+        <div class="card-front card-face">
+          <img class="Flower Flower-top-left" src="FlowerGrey.png">
+          <img class="Flower Flower-top-right" src="FlowerGrey.png">
+          <img class="Flower Flower-bottom-left" src="FlowerGrey.png">
+          <img class="Flower Flower-bottom-right" src="FlowerGrey.png">
+          <img class="card-value" src="horim2.png">
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-back card-face">
+          <img class="Flower Flower-top-left" src="Flower.png">
+          <img class="Flower Flower-top-right" src="Flower.png">
+          <img class="Flower Flower-bottom-left" src="Flower.png">
+          <img class="Flower Flower-bottom-right" src="Flower.png">
+          <img class="heart" src="heart.png">
+        </div>
+        <div class="card-front card-face">
+          <img class="Flower Flower-top-left" src="FlowerGrey.png">
+          <img class="Flower Flower-top-right" src="FlowerGrey.png">
+          <img class="Flower Flower-bottom-left" src="FlowerGrey.png">
+          <img class="Flower Flower-bottom-right" src="FlowerGrey.png">
+          <img class="card-value" src="mans.png">
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-back card-face">
+          <img class="Flower Flower-top-left" src="Flower.png">
+          <img class="Flower Flower-top-right" src="Flower.png">
+          <img class="Flower Flower-bottom-left" src="Flower.png">
+          <img class="Flower Flower-bottom-right" src="Flower.png">
+          <img class="heart" src="heart.png">
+        </div>
+        <div class="card-front card-face">
+          <img class="Flower Flower-top-left" src="FlowerGrey.png">
+          <img class="Flower Flower-top-right" src="FlowerGrey.png">
+          <img class="Flower Flower-bottom-left" src="FlowerGrey.png">
+          <img class="Flower Flower-bottom-right" src="FlowerGrey.png">
+          <img class="card-value" src="mans.png">
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-back card-face">
+          <img class="Flower Flower-top-left" src="Flower.png">
+          <img class="Flower Flower-top-right" src="Flower.png">
+          <img class="Flower Flower-bottom-left" src="Flower.png">
+          <img class="Flower Flower-bottom-right" src="Flower.png">
+          <img class="heart" src="heart.png">
+        </div>
+        <div class="card-front card-face">
+          <img class="Flower Flower-top-left" src="FlowerGrey.png">
+          <img class="Flower Flower-top-right" src="FlowerGrey.png">
+          <img class="Flower Flower-bottom-left" src="FlowerGrey.png">
+          <img class="Flower Flower-bottom-right" src="FlowerGrey.png">
+          <img class="card-value" src="meehyun.png">
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-back card-face">
+          <img class="Flower Flower-top-left" src="Flower.png">
+          <img class="Flower Flower-top-right" src="Flower.png">
+          <img class="Flower Flower-bottom-left" src="Flower.png">
+          <img class="Flower Flower-bottom-right" src="Flower.png">
+          <img class="heart" src="heart.png">
+        </div>
+        <div class="card-front card-face">
+          <img class="Flower Flower-top-left" src="FlowerGrey.png">
+          <img class="Flower Flower-top-right" src="FlowerGrey.png">
+          <img class="Flower Flower-bottom-left" src="FlowerGrey.png">
+          <img class="Flower Flower-bottom-right" src="FlowerGrey.png">
+          <img class="card-value" src="meehyun.png">
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-back card-face">
+          <img class="Flower Flower-top-left" src="Flower.png">
+          <img class="Flower Flower-top-right" src="Flower.png">
+          <img class="Flower Flower-bottom-left" src="Flower.png">
+          <img class="Flower Flower-bottom-right" src="Flower.png">
+          <img class="heart" src="heart.png">
+        </div>
+        <div class="card-front card-face">
+          <img class="Flower Flower-top-left" src="FlowerGrey.png">
+          <img class="Flower Flower-top-right" src="FlowerGrey.png">
+          <img class="Flower Flower-bottom-left" src="FlowerGrey.png">
+          <img class="Flower Flower-bottom-right" src="FlowerGrey.png">
+          <img class="card-value" src="mom.png">
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-back card-face">
+          <img class="Flower Flower-top-left" src="Flower.png">
+          <img class="Flower Flower-top-right" src="Flower.png">
+          <img class="Flower Flower-bottom-left" src="Flower.png">
+          <img class="Flower Flower-bottom-right" src="Flower.png">
+          <img class="heart" src="heart.png">
+        </div>
+        <div class="card-front card-face">
+          <img class="Flower Flower-top-left" src="FlowerGrey.png">
+          <img class="Flower Flower-top-right" src="FlowerGrey.png">
+          <img class="Flower Flower-bottom-left" src="FlowerGrey.png">
+          <img class="Flower Flower-bottom-right" src="FlowerGrey.png">
+          <img class="card-value" src="mom.png">
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-back card-face">
+          <img class="Flower Flower-top-left" src="Flower.png">
+          <img class="Flower Flower-top-right" src="Flower.png">
+          <img class="Flower Flower-bottom-left" src="Flower.png">
+          <img class="Flower Flower-bottom-right" src="Flower.png">
+          <img class="heart" src="heart.png">
+        </div>
+        <div class="card-front card-face">
+          <img class="Flower Flower-top-left" src="FlowerGrey.png">
+          <img class="Flower Flower-top-right" src="FlowerGrey.png">
+          <img class="Flower Flower-bottom-left" src="FlowerGrey.png">
+          <img class="Flower Flower-bottom-right" src="FlowerGrey.png">
+          <img class="card-value" src="two.png">
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-back card-face">
+          <img class="Flower Flower-top-left" src="Flower.png">
+          <img class="Flower Flower-top-right" src="Flower.png">
+          <img class="Flower Flower-bottom-left" src="Flower.png">
+          <img class="Flower Flower-bottom-right" src="Flower.png">
+          <img class="heart" src="heart.png">
+        </div>
+        <div class="card-front card-face">
+          <img class="Flower Flower-top-left" src="FlowerGrey.png">
+          <img class="Flower Flower-top-right" src="FlowerGrey.png">
+          <img class="Flower Flower-bottom-left" src="FlowerGrey.png">
+          <img class="Flower Flower-bottom-right" src="FlowerGrey.png">
+          <img class="card-value" src="two.png">
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-back card-face">
+          <img class="Flower Flower-top-left" src="Flower.png">
+          <img class="Flower Flower-top-right" src="Flower.png">
+          <img class="Flower Flower-bottom-left" src="Flower.png">
+          <img class="Flower Flower-bottom-right" src="Flower.png">
+          <img class="heart" src="heart.png">
+        </div>
+        <div class="card-front card-face">
+          <img class="Flower Flower-top-left" src="FlowerGrey.png">
+          <img class="Flower Flower-top-right" src="FlowerGrey.png">
+          <img class="Flower Flower-bottom-left" src="FlowerGrey.png">
+          <img class="Flower Flower-bottom-right" src="FlowerGrey.png">
+          <img class="card-value" src="womans.png">
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-back card-face">
+          <img class="Flower Flower-top-left" src="Flower.png">
+          <img class="Flower Flower-top-right" src="Flower.png">
+          <img class="Flower Flower-bottom-left" src="Flower.png">
+          <img class="Flower Flower-bottom-right" src="Flower.png">
+          <img class="heart" src="heart.png">
+        </div>
+        <div class="card-front card-face">
+          <img class="Flower Flower-top-left" src="FlowerGrey.png">
+          <img class="Flower Flower-top-right" src="FlowerGrey.png">
+          <img class="Flower Flower-bottom-left" src="FlowerGrey.png">
+          <img class="Flower Flower-bottom-right" src="FlowerGrey.png">
+          <img class="card-value" src="womans.png">
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
