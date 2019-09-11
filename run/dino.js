@@ -5,7 +5,11 @@
 모든 움직이는 물체와 세계 및 충돌 감지 기능이 있습니다
 플레이어와 유성과 타르 핏. 화면을 돌리는 효과가 있습니다
 유성이 이미지 데이터를 사용하여 생성되면 빨간색입니다. 사용하지 않도록 객체 풀링을 구현합니다.
-"new"를 사용하여 새 개체를 만듭니다. 이전 튜토리얼에서 다룬 내용과 내가 다루지 않은 것들이 섞여있습니다. */
+"new"를 사용하여 새 개체를 만듭니다. 이전 튜토리얼에서 다룬 내용과 다루지 않은 것들이 섞여있습니다. */
+var bgm = new Audio("makiba.mp3");
+bgm.volume = 0.7;
+bgm.loop = true;
+bgm.play();
 
 (function() {
   "use strict";
@@ -13,6 +17,9 @@
   const TILE_SIZE = 16;
   const WORLD_HEIGHT = 144;
   const WORLD_WIDTH = 256;
+
+  var jumpSound = new Audio("jump.mp3");
+  var hitSound = new Audio("hit.mp3");
 
   //// CLASSES ////
 
@@ -135,6 +142,7 @@
       ) {
         player.alive = false;
         player.animation.change(display.tile_sheet.frame_sets[5], 10);
+        hitSound.play();
       }
     },
 
@@ -771,7 +779,6 @@
 
       start: function() {
         // Start the game loop.
-
         this.afrequest = window.requestAnimationFrame(this.loop);
       },
 
@@ -788,7 +795,7 @@
         if (game.player.alive) {
           if (controller.active && !game.player.jumping) {
             // Get user input
-
+            jumpSound.play();
             controller.active = false;
             game.player.jumping = true;
             game.player.y_velocity -= 15;
@@ -961,6 +968,8 @@
       this.object_manager.tarpit_pool.storeAll();
 
       this.speed = 3;
+      bgm.pause();
+      bgm.currentTime = 0;
     }
   };
 
@@ -976,7 +985,6 @@
     display.tile_sheet.columns = this.width / TILE_SIZE;
 
     display.resize();
-
     game.engine.start();
   });
 
