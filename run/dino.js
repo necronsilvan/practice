@@ -7,7 +7,7 @@
 유성이 이미지 데이터를 사용하여 생성되면 빨간색입니다. 사용하지 않도록 객체 풀링을 구현합니다.
 "new"를 사용하여 새 개체를 만듭니다. 이전 튜토리얼에서 다룬 내용과 다루지 않은 것들이 섞여있습니다. */
 var bgm = new Audio("makiba.mp3");
-bgm.volume = 0.7;
+bgm.volume = 0.6;
 bgm.loop = true;
 bgm.play();
 
@@ -17,7 +17,6 @@ bgm.play();
   const TILE_SIZE = 16;
   const WORLD_HEIGHT = 144;
   const WORLD_WIDTH = 256;
-
   var jumpSound = new Audio("jump.mp3");
   var hitSound = new Audio("hit.mp3");
 
@@ -968,8 +967,6 @@ bgm.play();
       this.object_manager.tarpit_pool.storeAll();
 
       this.speed = 3;
-      bgm.pause();
-      bgm.currentTime = 0;
     }
   };
 
