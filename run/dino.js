@@ -6,6 +6,10 @@
 플레이어와 유성과 타르 핏. 화면을 돌리는 효과가 있습니다
 유성이 이미지 데이터를 사용하여 생성되면 빨간색입니다. 사용하지 않도록 객체 풀링을 구현합니다.
 "new"를 사용하여 새 개체를 만듭니다. 이전 튜토리얼에서 다룬 내용과 다루지 않은 것들이 섞여있습니다. */
+var bgm = new Audio("makiba.mp3");
+bgm.volume = 0.8;
+bgm.loop = true;
+bgm.play();
 
 (function() {
   "use strict";
